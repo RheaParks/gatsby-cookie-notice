@@ -63,7 +63,7 @@ const CookieNotice = ({
 
     const acceptCookie = () => {
         prop.cookiesList.map(c => {
-            return document.cookie = c.name + "=true" + expires + "; path=/";
+            return document.cookie = c.name + "=true" + expires + "; path=/" + "SameSite=Strict; Secure";
         })
         initializeAndTrack(window.location);
         setDisplayCookieNotice(false)
@@ -84,9 +84,9 @@ const CookieNotice = ({
         e.preventDefault();
         prop.cookiesList.map(c => {
                 if (document.getElementById(c.name).checked)
-                    document.cookie = c.name + "=true" + expires + "; path=/";
+                    document.cookie = c.name + "=true" + expires + "; path=/" + "SameSite=Strict; Secure";
                 else
-                    document.cookie = c.name + "=false" + expires + "; path=/";
+                    document.cookie = c.name + "=false" + expires + "; path=/" + "SameSite=Strict; Secure";
                 initializeAndTrack(window.location);
                 setDisplayCookieNotice(false)
             }
