@@ -1,5 +1,4 @@
 {
-  "name": "rhea/gatsby-cookie-notice",
   "description": "Gatsby Plugin that add a Cookie Component fully customizable working with gatsby-plugin-gdpr-cookies.",
   "author": "Florent Vandroy",
   "keywords": ["gatsby", "gatsby-plugin", "cookie", "GDPR", "notice", "customizable"],
@@ -49,6 +48,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/florent6001/gatsby-cookie-notice.git"
-}
+    "url": "git+https://github.com/RheaParks/gatsby-cookie-notice"
+  }
 }

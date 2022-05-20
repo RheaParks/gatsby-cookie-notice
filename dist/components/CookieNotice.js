@@ -73,7 +73,7 @@ const CookieNotice = _ref => {
 
   const acceptCookie = () => {
     prop.cookiesList.map(c => {
-      return document.cookie = c.name + "=true" + expires + "; path=/";
+      return document.cookie = c.name + "=true" + expires + "; path=/" + "SameSite=Strict; Secure";
     });
     (0, _gatsbyPluginGdprCookies.initializeAndTrack)(window.location);
     setDisplayCookieNotice(false);
@@ -90,7 +90,7 @@ const CookieNotice = _ref => {
   const validatePreferences = e => {
     e.preventDefault();
     prop.cookiesList.map(c => {
-      if (document.getElementById(c.name).checked) document.cookie = c.name + "=true" + expires + "; path=/";else document.cookie = c.name + "=false" + expires + "; path=/";
+      if (document.getElementById(c.name).checked) document.cookie = c.name + "=true" + expires + "; path=/" + "SameSite=Strict; Secure";else document.cookie = c.name + "=false" + expires + "; path=/" + "SameSite=Strict; Secure";
       (0, _gatsbyPluginGdprCookies.initializeAndTrack)(window.location);
       setDisplayCookieNotice(false);
     });
@@ -180,7 +180,6 @@ CookieNotice.defaultProps = {
   personalizeButtonText: "Personalize",
   cookies: [{
     name: 'necessary',
-    checked: true,
     editable: false,
     default: true,
     title: 'Essentiel',
